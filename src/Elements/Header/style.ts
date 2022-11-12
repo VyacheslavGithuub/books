@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const HeaderSC = styled.header`
   width: 100%;
-  height: 120px;
+  height: 100px;
   background-color: ${({ theme }) => theme.auxiliary};
   display: flex;
   align-items: center;

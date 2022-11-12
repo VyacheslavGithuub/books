@@ -7,7 +7,7 @@ export const getSearchData = createAsyncThunk(
   async (_, ThunkAPI) => {
     try {
       const response = await axios.get<ISearchData>(
-        "https://www.googleapis.com/books/v1/volumes?q=react&key=AIzaSyBpZ_JLAw0k9rD7yeZ_Wy66uEfgU12nnwI"
+        "https://www.googleapis.com/books/v1/volumes?q=react&key=AIzaSyBpZ_JLAw0k9rD7yeZ_Wy66uEfgU12nnwI&maxResults=40"
       );
       return response.data;
     } catch (error) {

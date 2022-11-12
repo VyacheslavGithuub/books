@@ -1,19 +1,19 @@
-export interface IndustryIdentifier {
+interface IndustryIdentifier {
   type: string;
   identifier: string;
 }
 
-export interface ReadingModes {
+interface ReadingModes {
   text: boolean;
   image: boolean;
 }
 
-export interface PanelizationSummary {
+interface PanelizationSummary {
   containsEpubBubbles: boolean;
   containsImageBubbles: boolean;
 }
 
-export interface ImageLinks {
+interface ImageLinks {
   smallThumbnail: string;
   thumbnail: string;
   small: string;
@@ -22,7 +22,7 @@ export interface ImageLinks {
   extraLarge: string;
 }
 
-export interface VolumeInfo {
+interface VolumeInfo {
   title: string;
   authors: string[];
   publisher: string;
@@ -45,42 +45,42 @@ export interface VolumeInfo {
   canonicalVolumeLink: string;
 }
 
-export interface Layer {
+interface Layer {
   layerId: string;
   volumeAnnotationsVersion: string;
 }
 
-export interface LayerInfo {
+interface LayerInfo {
   layers: Layer[];
 }
 
-export interface ListPrice {
+interface ListPrice {
   amount: number;
   currencyCode: string;
 }
 
-export interface RetailPrice {
+interface RetailPrice {
   amount: number;
   currencyCode: string;
 }
 
-export interface ListPrice2 {
+interface ListPrice2 {
   amountInMicros: number;
   currencyCode: string;
 }
 
-export interface RetailPrice2 {
+interface RetailPrice2 {
   amountInMicros: number;
   currencyCode: string;
 }
 
-export interface Offer {
+interface Offer {
   finskyOfferType: number;
   listPrice: ListPrice2;
   retailPrice: RetailPrice2;
 }
 
-export interface SaleInfo {
+interface SaleInfo {
   country: string;
   saleability: string;
   isEbook: boolean;
@@ -90,17 +90,17 @@ export interface SaleInfo {
   offers: Offer[];
 }
 
-export interface Epub {
+interface Epub {
   isAvailable: boolean;
   acsTokenLink: string;
 }
 
-export interface Pdf {
+interface Pdf {
   isAvailable: boolean;
   acsTokenLink: string;
 }
 
-export interface AccessInfo {
+interface AccessInfo {
   country: string;
   viewability: string;
   embeddable: boolean;
@@ -113,7 +113,7 @@ export interface AccessInfo {
   quoteSharingAllowed: boolean;
 }
 
-export interface ISearchData {
+interface ISearchItem {
   kind: string;
   id: string;
   etag: string;
@@ -122,4 +122,10 @@ export interface ISearchData {
   layerInfo: LayerInfo;
   saleInfo: SaleInfo;
   accessInfo: AccessInfo;
+}
+
+export interface ISearchData {
+  kind: string;
+  totalItems: string;
+  items: ISearchItem[];
 }

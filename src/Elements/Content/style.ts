@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContentSC = styled.main`
   width: 100%;
-  margin: 15px 0px;
+  margin-top: 15px;
   background-color: ${({ theme }) => theme.auxiliary};
 `;
 
