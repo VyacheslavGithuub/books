@@ -1,7 +1,17 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import {
+  configureStore,
+  ThunkAction,
+  Action,
+  combineReducers,
+} from "@reduxjs/toolkit";
+import { searchSlice } from "./slice/searchSlice";
+
+const rootReducer = combineReducers({
+  search: searchSlice.reducer,
+});
 
 export const store = configureStore({
-  reducer: {},
+  reducer: rootReducer,
 });
 
 export type AppDispatch = typeof store.dispatch;
