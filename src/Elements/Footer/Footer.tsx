@@ -4,7 +4,12 @@ import { useFooterStyled } from "./style";
 const Footer = () => {
   const { FooterSC } = useFooterStyled();
 
-  return <FooterSC>Footer</FooterSC>;
+  return (
+    <FooterSC>
+      Github:{" "}
+      <a href="https://github.com/VyacheslavGithuub"> VyacheslavGithuub</a>
+    </FooterSC>
+  );
 };
 
 export default Footer;

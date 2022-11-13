@@ -9,12 +9,15 @@ const Search = () => {
   const dispatch = useAppDispatch();
 
   const handleSearch = (e: any) => {
-    dispatch(getSearchData());
+    e.preventDefault();
+    let searchValue = e.target[0].value;
+
+    dispatch(getSearchData(searchValue));
   };
   return (
-    <SearchWrapSC onSubmit={(e) => e.preventDefault()}>
+    <SearchWrapSC onSubmit={handleSearch}>
       <SearchSC placeholder="Enter Your Book Name" />
-      <SearcButtonSC onClick={handleSearch}>
+      <SearcButtonSC>
         <IconLupa />
       </SearcButtonSC>
     </SearchWrapSC>

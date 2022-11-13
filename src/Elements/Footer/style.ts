@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 const FooterSC = styled.footer`
-  position: sticky;
-  bottom: 0px;
-  left: calc(50% - 600px);
-  width: 1200px;
-  height: 70px;
+  height: 40px;
+  padding: 15px;
   background-color: ${({ theme }) => theme.business};
+  color: ${({ theme }) => theme.background};
 
-  @media (max-width: 1200px) {
-    width: 100%;
-    left: 0px;
+  a {
+    color: ${({ theme }) => theme.invertBackground};
   }
 `;
 

@@ -4,10 +4,10 @@ import { ISearchData } from "../../types/ISearchData";
 
 export const getSearchData = createAsyncThunk(
   "search/getsearch",
-  async (_, ThunkAPI) => {
+  async (value: string, ThunkAPI) => {
     try {
       const response = await axios.get<ISearchData>(
-        "https://www.googleapis.com/books/v1/volumes?q=react&key=AIzaSyBpZ_JLAw0k9rD7yeZ_Wy66uEfgU12nnwI&maxResults=40"
+        `https://www.googleapis.com/books/v1/volumes?q=${value}&key=AIzaSyBpZ_JLAw0k9rD7yeZ_Wy66uEfgU12nnwI&maxResults=40`
       );
       return response.data;
     } catch (error) {
