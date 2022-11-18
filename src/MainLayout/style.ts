@@ -6,6 +6,8 @@ const MainLayoutSC = styled.div`
   min-height: 100vh;
   background-color: ${({ theme }) => theme.background};
   transition: 0.3s all;
+  color: ${({ theme }) => theme.textMain};
+  letter-spacing: 1px;
 `;
 const IconBulbSC = styled.div`
   position: absolute;

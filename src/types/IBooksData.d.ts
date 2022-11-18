@@ -113,7 +113,7 @@ interface AccessInfo {
   quoteSharingAllowed: boolean;
 }
 
-interface ISearchItem {
+export interface IBooksItem {
   kind: string;
   id: string;
   etag: string;
@@ -124,8 +124,12 @@ interface ISearchItem {
   accessInfo: AccessInfo;
 }
 
-export interface ISearchData {
+export interface IBooksData {
   kind: string;
   totalItems: string;
-  items: ISearchItem[];
+  items: IBooksItem[];
+}
+
+export interface IBook {
+  book: IBooksItem;
 }

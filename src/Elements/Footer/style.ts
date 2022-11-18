@@ -3,11 +3,12 @@ import styled from "styled-components";
 const FooterSC = styled.footer`
   height: 40px;
   padding: 15px;
-  background-color: ${({ theme }) => theme.business};
+  font-weight: 500;
+  background-color: ${({ theme }) => theme.footer};
   color: ${({ theme }) => theme.background};
 
   a {
-    color: ${({ theme }) => theme.invertBackground};
+    color: ${({ theme }) => theme.textMain};
   }
 `;
 

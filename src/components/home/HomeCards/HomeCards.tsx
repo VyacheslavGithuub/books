@@ -1,24 +1,32 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import Loader from "../../../UI/Loader/Loader";
 import HomeItemCards from "./HomeItemCards/HomeItemCards";
 import { styleHomeCards } from "./style";
 
 const HomeCards = () => {
-  const { HomeCardsSC, LoadingSC } = styleHomeCards();
-  const { data, status } = useAppSelector((state) => state.search);
-  if (data) {
-    console.log(data[0]?.items);
-  }
+  const { HomeCardsSC } = styleHomeCards();
+  const { data, isLoading, errorBook } = useAppSelector((state) => state.books);
 
   return (
     <HomeCardsSC>
-      <LoadingSC>{status && <Loader />}</LoadingSC>
-
+      {isLoading && <Loader />}
+      {errorBook && <h2>Google service not responding </h2>}
       {data[0]?.items.map((card, index) => {
-        let thumbnail =
-          card.volumeInfo.imageLinks && card.volumeInfo.imageLinks.thumbnail;
-        return <HomeItemCards thumbnail={thumbnail} key={index} />;
+        const id = card?.id;
+        const thumbnail = card?.volumeInfo?.imageLinks?.thumbnail;
+        const amount = card?.saleInfo?.listPrice?.amount;
+
+        if (thumbnail && amount) {
+          return (
+            <HomeItemCards
+              key={index}
+              id={id}
+              thumbnail={thumbnail}
+              amount={amount}
+            />
+          );
+        }
       })}
     </HomeCardsSC>
   );

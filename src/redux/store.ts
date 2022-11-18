@@ -4,10 +4,10 @@ import {
   Action,
   combineReducers,
 } from "@reduxjs/toolkit";
-import { searchSlice } from "./slice/searchSlice";
+import { booksSlice } from "./slice/booksSlice";
 
 const rootReducer = combineReducers({
-  search: searchSlice.reducer,
+  books: booksSlice.reducer,
 });
 
 export const store = configureStore({

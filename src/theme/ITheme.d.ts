@@ -3,6 +3,8 @@ export interface ITheme {
   invertBackground: string;
   auxiliary: string;
   intermediate: string;
-  business: string;
+  footer: string;
   ordinary: string;
+  textMain: string;
+  textAxilary: string;
 }

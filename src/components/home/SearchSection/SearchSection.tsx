@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../../../UI/Search/Search";
+import Search from "../Search/Search";
 import { useSearchSectionStyle } from "./style";
 
 const SearchSection = () => {

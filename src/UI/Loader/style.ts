@@ -12,6 +12,9 @@ const LoaderSC = styled.div`
   display: inline-block;
   width: 80px;
   height: 80px;
+  position: absolute;
+  left: calc(50% - 40px);
+  bottom: calc(50% - 40px);
   & > div {
     box-sizing: border-box;
     display: block;

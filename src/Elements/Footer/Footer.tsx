@@ -7,7 +7,10 @@ const Footer = () => {
   return (
     <FooterSC>
       Github:{" "}
-      <a href="https://github.com/VyacheslavGithuub"> VyacheslavGithuub</a>
+      <a target="_blank" href="https://github.com/VyacheslavGithuub">
+        {" "}
+        VyacheslavGithuub
+      </a>
     </FooterSC>
   );
 };

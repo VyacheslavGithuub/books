@@ -1,24 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styleHICards } from "./style";
 
-const HomeItemCards = ({ thumbnail }: any) => {
-  const {
-    ItemCardWrapSC,
-    ItemCardSC,
-    CardDescriptionsSC,
-    CardDesTitleSC,
-    CardDPrice,
-  } = styleHICards();
+interface IHomeItemCardsProps {
+  id: string;
+  thumbnail: string;
+  amount: number;
+}
+
+const HomeItemCards = ({ thumbnail, amount, id }: IHomeItemCardsProps) => {
+  const { ItemCardWrapSC, ItemCardSC, CardDPrice } = styleHICards();
 
   return (
     <ItemCardWrapSC>
-      <ItemCardSC>
-        <img src={thumbnail} alt="icon" />
-        <CardDescriptionsSC>
-          <CardDesTitleSC>React js</CardDesTitleSC>
-          <CardDPrice>1000 rub</CardDPrice>
-        </CardDescriptionsSC>
-      </ItemCardSC>
+      <Link to={"/about_book/" + id}>
+        <ItemCardSC>
+          <img src={thumbnail} alt="icon" />
+          <CardDPrice>{amount} rub</CardDPrice>
+        </ItemCardSC>
+      </Link>
     </ItemCardWrapSC>
   );
 };
