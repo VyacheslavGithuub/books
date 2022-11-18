@@ -1,10 +1,19 @@
+# State
+
+### In developing
+
 # Pajes
+
 https://vyacheslavgithuub.github.io/books/
+
 # Start project
-npm start
+
+### git clone https://github.com/VyacheslavGithuub/books.git
+
+### npm install
+
+### npm start
+
 # Photo
-![image](https://user-images.githubusercontent.com/111220807/202098545-aadbea7c-2bd7-4095-ae77-a79d85af23d5.png)
-###
-![image](https://user-images.githubusercontent.com/111220807/202689625-bbc0931a-6ef8-4586-8363-0cced29b71e2.png)
 
-
+![image](https://user-images.githubusercontent.com/111220807/202107494-36a706c3-7fc4-4c2b-ab02-3348c5c0ac69.png)
