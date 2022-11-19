@@ -5,7 +5,6 @@ import { useSearchSectionStyle } from "./style";
 const SearchSection = () => {
   const {
     BooksSectionSC,
-    SearchWorkSpaceSC,
     SearchSectionWrapSC,
     SearchTitleSC,
     SearchChildrenSC,

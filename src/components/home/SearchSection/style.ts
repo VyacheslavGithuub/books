@@ -13,6 +13,11 @@ const SearchSectionWrapSC = styled.div`
   border: 2px ridge #6c3d1c;
   box-shadow: rgba(250, 250, 250, 0.4) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    height: 450px;
+  }
 `;
 
 const BooksSectionSC = styled.section`
@@ -27,6 +32,10 @@ const BooksSectionSC = styled.section`
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0) 0px 30px 60px -12px inset,
     rgba(0, 0, 0) 0px 18px 36px -18px inset;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
 `;
 const SearchSectionSC = styled.div`
   width: 50%;
@@ -34,6 +43,9 @@ const SearchSectionSC = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
 `;
 
 const SearchTitleSC = styled.h2`
@@ -42,7 +54,6 @@ const SearchTitleSC = styled.h2`
   letter-spacing: 2px;
   color: #fcf3eb;
 `;
-const SearchWorkSpaceSC = styled.div``;
 const SearchChildrenSC = styled.div`
   background-image: url(${IconChildren});
   background-size: contain;
@@ -53,7 +64,6 @@ const SearchChildrenSC = styled.div`
 
 export const useSearchSectionStyle = () => ({
   BooksSectionSC,
-  SearchWorkSpaceSC,
   SearchSectionWrapSC,
   SearchTitleSC,
   SearchChildrenSC,

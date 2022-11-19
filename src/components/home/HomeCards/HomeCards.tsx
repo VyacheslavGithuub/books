@@ -5,13 +5,20 @@ import HomeItemCards from "./HomeItemCards/HomeItemCards";
 import { styleHomeCards } from "./style";
 
 const HomeCards = () => {
-  const { HomeCardsSC } = styleHomeCards();
+  const { HomeCardsSC, HomeCardsTitleSC } = styleHomeCards();
   const { data, isLoading, errorBook } = useAppSelector((state) => state.books);
 
   return (
     <HomeCardsSC>
       {isLoading && <Loader />}
-      {errorBook && <h2>Google service not responding </h2>}
+      {errorBook && (
+        <HomeCardsTitleSC>Google service not responding </HomeCardsTitleSC>
+      )}
+      {!data[0] && (
+        <HomeCardsTitleSC>
+          Используйте поисковую строку для получения книг
+        </HomeCardsTitleSC>
+      )}
       {data[0]?.items.map((card, index) => {
         const id = card?.id;
         const thumbnail = card?.volumeInfo?.imageLinks?.thumbnail;

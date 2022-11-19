@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { styleHICards } from "./style";
-
-interface IHomeItemCardsProps {
-  id: string;
-  thumbnail: string;
-  amount: number;
-}
+import { IHomeItemCardsProps } from "./type";
 
 const HomeItemCards = ({ thumbnail, amount, id }: IHomeItemCardsProps) => {
   const { ItemCardWrapSC, ItemCardSC, CardDPrice } = styleHICards();

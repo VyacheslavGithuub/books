@@ -6,6 +6,7 @@ const AboutBookSC = styled.div`
 const AboutBookImgSC = styled.a`
   width: 300px;
   height: 423px;
+  transition: 0.2s all;
 
   img {
     width: 300px;
@@ -24,6 +25,7 @@ const AboutBookMainInfoSC = styled.div`
 `;
 
 const AboutBookTopSC = styled.div`
+  padding: 20px 15px;
   display: flex;
   a {
     font-size: 20px;
@@ -33,11 +35,9 @@ const AboutBookTopSC = styled.div`
 const ABDescriptionSC = styled.p`
   text-indent: 50px;
   line-height: 150%;
-  margin-top: 20px;
-
-  max-height: 336px;
+  max-height: 346px;
   overflow-y: auto;
-  padding: 10px;
+  padding: 10px 20px;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { IBook } from "../../../types/IBooksData";
+import SkeletonUI from "../../../UI/SkeletonUI/SkeletonUI";
 import { useAboutBookStyle } from "./style";
 import { useAboutBook } from "./useAboutBook";
 
@@ -35,7 +35,11 @@ const AboutBook = ({ book }: IBook) => {
     <AboutBookSC>
       <AboutBookTopSC>
         <AboutBookImgSC href={previewLink} target="_blank">
-          <img src={photoSmall} alt="IconError" />
+          {photoSmall ? (
+            <img src={photoSmall} alt="IconError" />
+          ) : (
+            <SkeletonUI />
+          )}
         </AboutBookImgSC>
         <AboutBookMainInfoSC>
           {categories}
@@ -66,7 +70,9 @@ const AboutBook = ({ book }: IBook) => {
           </AB_OpenGoogleBook>
         </AboutBookMainInfoSC>
       </AboutBookTopSC>
-      <ABDescriptionSC>{description}</ABDescriptionSC>
+      <ABDescriptionSC>
+        {description ? description : <SkeletonUI />}
+      </ABDescriptionSC>
     </AboutBookSC>
   );
 };

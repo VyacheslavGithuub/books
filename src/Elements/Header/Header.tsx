@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import menuObj from "./menuObj.json";
 import { useHeaderStyled } from "./style";
 
-interface IHeaderProps {
-  children: React.ReactNode;
-}
 const Header = () => {
   const { HeaderSC, HeaderItemSC } = useHeaderStyled();
 
