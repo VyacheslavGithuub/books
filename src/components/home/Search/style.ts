@@ -4,9 +4,12 @@ const SearchWrapSC = styled.form`
   display: flex;
   border: 1px solid;
   margin: 20px 0px;
+  max-width: 420px;
+  width: 90%;
 `;
 const SearchSC = styled.input`
-  width: 420px;
+  width: 100%;
+
   font-size: 20px;
   border: none;
   outline: none;

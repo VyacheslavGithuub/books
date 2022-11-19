@@ -1,5 +1,5 @@
 [
   {"title": "HOME", "link": "/"},
   {"title": "Categori", "link": "/category"},
-  {"title": "about project", "link": "/about_project"}
+  {"title": "about", "link": "/about_project"}
 ]

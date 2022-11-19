@@ -18,6 +18,11 @@ const SearchSectionWrapSC = styled.div`
     justify-content: center;
     height: 450px;
   }
+  @media (max-width: 600px) {
+    height: 100px;
+    background: none;
+    border: none;
+  }
 `;
 
 const BooksSectionSC = styled.section`
@@ -53,6 +58,10 @@ const SearchTitleSC = styled.h2`
   font-weight: 400;
   letter-spacing: 2px;
   color: #fcf3eb;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 const SearchChildrenSC = styled.div`
   background-image: url(${IconChildren});
@@ -60,6 +69,9 @@ const SearchChildrenSC = styled.div`
   background-repeat: no-repeat;
   width: 300px;
   height: 300px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const useSearchSectionStyle = () => ({

@@ -8,6 +8,10 @@ const HeaderSC = styled.header`
   align-items: center;
   justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  @media (max-width: 600px) {
+    height: 70px;
+  }
 `;
 const HeaderItemSC = styled.li`
   width: 25%;
@@ -18,7 +22,7 @@ const HeaderItemSC = styled.li`
 
   a {
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 400;
     position: relative;
     color: ${({ theme }) => theme.ordinary};
     cursor: pointer;
@@ -39,6 +43,10 @@ const HeaderItemSC = styled.li`
   a:hover:after,
   a:focus:after {
     width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+  }
+
+  @media (max-width: 600px) {
+    font-size: 20px;
   }
 `;
 

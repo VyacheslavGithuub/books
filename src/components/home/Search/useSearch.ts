@@ -14,6 +14,7 @@ export const useSearch = () => {
       dispatch(clearSearchData());
     }
     dispatch(getSearchData(searchValue));
+    e.target[0].value = "";
   };
   return {
     handleSearch,

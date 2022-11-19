@@ -1,16 +1,27 @@
 import React from "react";
+import IconBulb from "../../Icon/IconBulb";
 import { useFooterStyled } from "./style";
 
-const Footer = () => {
-  const { FooterSC } = useFooterStyled();
+interface IFooter {
+  revTheme: () => void;
+}
+
+const Footer = ({ revTheme }: IFooter) => {
+  const { FooterSC, IconBulbSC } = useFooterStyled();
 
   return (
     <FooterSC>
-      Github:{" "}
-      <a target="_blank" href="https://github.com/VyacheslavGithuub">
-        {" "}
-        VyacheslavGithuub
-      </a>
+      <div>
+        Github:{" "}
+        <a target="_blank" href="https://github.com/VyacheslavGithuub">
+          {" "}
+          VyacheslavGithuub
+        </a>
+      </div>
+      {/*Переключаем тему */}
+      <IconBulbSC onClick={revTheme}>
+        <IconBulb />
+      </IconBulbSC>
     </FooterSC>
   );
 };

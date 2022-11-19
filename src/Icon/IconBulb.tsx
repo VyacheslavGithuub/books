@@ -5,8 +5,8 @@ const IconBulb = () => {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="100px"
-      height="100px"
+      width="35px"
+      height="35px"
       viewBox="0 0 706.000000 1280.000000"
       preserveAspectRatio="xMidYMid meet"
     >

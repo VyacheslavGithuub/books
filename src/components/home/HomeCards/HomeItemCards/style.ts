@@ -8,7 +8,7 @@ const ItemCardWrapSC = styled.div`
   a {
     display: flex;
     justify-content: center;
-    min-width: 200px;
+    min-width: 220px;
   }
 
   @media (max-width: 1100px) {
@@ -20,8 +20,16 @@ const ItemCardWrapSC = styled.div`
   @media (max-width: 600px) {
     width: calc(100% / 2);
   }
+  @media (max-width: 450px) {
+    a {
+      min-width: 180px;
+    }
+  }
   @media (max-width: 350px) {
-    width: calc(100% / 1);
+    width: 100%;
+    a {
+      width: 80%;
+    }
   }
 `;
 const ItemCardSC = styled.div`
@@ -41,12 +49,19 @@ const ItemCardSC = styled.div`
     height: 250px;
     border-radius: 8px;
   }
+  @media (max-width: 450px) {
+    padding: 10px;
+
+    img {
+      height: 180px;
+    }
+  }
 `;
 
 const CardDPrice = styled.button`
   cursor: pointer;
   background-color: ${({ theme }) => theme.auxiliary};
-  color: ${({ theme }) => theme.footer};
+  color: black;
   width: 100%;
   margin-top: 5px;
   font-size: 18px;

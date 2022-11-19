@@ -15,15 +15,11 @@ function MainLayout() {
   return (
     <ThemeProvider theme={isTheme ? dark_theme : light_theme}>
       <MainLayoutSC>
-        {/*Переключаем тему */}
-        <IconBulbSC onClick={hendleChangeTheme}>
-          <IconBulb />
-        </IconBulbSC>
         {/* Контейнер для всего содержимого сайта */}
         <MainLayoutContainerSC>
           <Header />
           <Content />
-          <Footer />
+          <Footer revTheme={hendleChangeTheme} />
         </MainLayoutContainerSC>
       </MainLayoutSC>
     </ThemeProvider>

@@ -14,7 +14,7 @@ const HomeCards = () => {
       {errorBook && (
         <HomeCardsTitleSC>Google service not responding </HomeCardsTitleSC>
       )}
-      {!data[0] && (
+      {!data[0] && isLoading == false && (
         <HomeCardsTitleSC>
           Используйте поисковую строку для получения книг
         </HomeCardsTitleSC>
