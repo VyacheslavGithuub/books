@@ -8,6 +8,7 @@ export const useAboutBook = ({ book }: IBook) => {
 
   //volumeInfo
   const authors = volumeInfo?.authors[0];
+  const language = volumeInfo?.language;
   const categories = volumeInfo?.categories[0];
   const description = volumeInfo?.description;
   const publisher = volumeInfo?.publisher;
@@ -22,15 +23,16 @@ export const useAboutBook = ({ book }: IBook) => {
   const listPrice = saleInfo?.listPrice.amount;
 
   return {
+    title,
     authors,
+    language,
+    publisher,
+    listPrice,
+    photoSmall,
     categories,
     description,
-    publisher,
-    title,
     previewLink,
     publishedDate,
     printedPageCount,
-    photoSmall,
-    listPrice,
   };
 };

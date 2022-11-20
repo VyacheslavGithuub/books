@@ -30,6 +30,7 @@ const AboutBookImgSC = styled.a`
     justify-content: center;
     height: calc(100vh - 400px);
     max-height: 423px;
+    margin-bottom: 10px;
 
     img {
       max-width: 300px;
@@ -39,7 +40,6 @@ const AboutBookImgSC = styled.a`
   }
   @media (max-width: 450px) {
     max-height: 325px;
-    margin-bottom: 10px;
     justify-content: left;
 
     img {
@@ -56,6 +56,9 @@ const AboutBookMainInfoSC = styled.div`
   }
   @media (max-width: 750px) {
     margin-left: 15px;
+  }
+  @media (max-width: 450px) {
+    margin-left: 0px;
   }
 `;
 
@@ -91,8 +94,6 @@ const ABDescriptionSC = styled.p`
     min-height: 246px;
   }
   @media (max-width: 450px) {
-    max-height: calc(30vh);
-
     text-indent: 25px;
     padding: 0px;
     font-size: 14px;

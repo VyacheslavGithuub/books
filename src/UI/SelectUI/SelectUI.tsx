@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelectStyle } from "./style";
 
 interface ISelectUIProps {
@@ -8,18 +8,21 @@ interface ISelectUIProps {
 const SelectUI = ({ title, children }: ISelectUIProps) => {
   const { SelectSC, TriangleSC, SelectTitleSC, SelectContentSC } =
     useSelectStyle();
-  const [isShow, setShow] = useState<boolean>(false);
-  const handleChangeIsShow = () => setShow(!isShow);
 
+  const [isShow, setShow] = useState<boolean>(false);
+
+  const handleChangeIsShow = () => {
+    setShow(!isShow);
+  };
   return (
     <SelectSC>
       <SelectTitleSC onClick={handleChangeIsShow}>
         {title} <TriangleSC isShow={isShow} />
       </SelectTitleSC>
-      {/* <hr /> */}
+
       <SelectContentSC isShow={isShow}>{children}</SelectContentSC>
     </SelectSC>
   );
 };
 
-export default SelectUI;
+export default React.memo(SelectUI);

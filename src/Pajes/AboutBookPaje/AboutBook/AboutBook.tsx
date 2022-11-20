@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMatchMedia } from "../../../hooks/useMatchMedia";
 import { IBook } from "../../../types/IBooksData";
 import SelectUI from "../../../UI/SelectUI/SelectUI";
@@ -19,16 +19,17 @@ const AboutBook = ({ book }: IBook) => {
     AB_OpenGoogleBook,
   } = useAboutBookStyle();
   const {
+    title,
     authors,
+    language,
+    publisher,
+    listPrice,
+    photoSmall,
     categories,
     description,
-    publisher,
-    title,
     previewLink,
     publishedDate,
     printedPageCount,
-    photoSmall,
-    listPrice,
   } = useAboutBook({ book });
 
   return (
@@ -42,13 +43,13 @@ const AboutBook = ({ book }: IBook) => {
             <SkeletonUI />
           )}
         </AboutBookImgSC>
-
         <AboutBookMainInfoSC>
           {!isMobile && <AB_Header title={title} categories={categories} />}
           {isMobile ? (
             <SelectUI title="о книге">
               <AB_MainInfo
                 authors={authors}
+                language={language}
                 publisher={publisher}
                 listPrice={listPrice}
                 publishedDate={publishedDate}
@@ -58,6 +59,7 @@ const AboutBook = ({ book }: IBook) => {
           ) : (
             <AB_MainInfo
               authors={authors}
+              language={language}
               publisher={publisher}
               listPrice={listPrice}
               publishedDate={publishedDate}

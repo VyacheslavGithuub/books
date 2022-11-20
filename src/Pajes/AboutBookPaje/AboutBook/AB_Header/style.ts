@@ -24,6 +24,7 @@ const AB_TitleSC = styled.h2`
   @media (max-width: 450px) {
     text-align: left;
     margin-bottom: 10px;
+    margin-top: 0px;
     font-size: 22px;
   }
 `;

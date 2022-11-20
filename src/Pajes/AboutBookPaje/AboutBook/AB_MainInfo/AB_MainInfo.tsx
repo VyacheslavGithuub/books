@@ -1,8 +1,10 @@
 import React from "react";
+import CalendarDateUI from "../../../../UI/CalendarDateUI/CalendarDateUI";
 import { useAB_MainInfoStyle } from "./style";
 
 interface IAB_MainInfoProps {
   authors: string;
+  language: string;
   publisher: string;
   listPrice: number;
   publishedDate: string;
@@ -10,6 +12,7 @@ interface IAB_MainInfoProps {
 }
 const AB_MainInfo = ({
   authors,
+  language,
   publisher,
   listPrice,
   publishedDate,
@@ -32,9 +35,11 @@ const AB_MainInfo = ({
       <AB_DescriptionSC>
         <li>{authors}</li>
         <li>{publisher}</li>
-        <li>{publishedDate}</li>
+        <li>
+          <CalendarDateUI data={publishedDate} />{" "}
+        </li>
         <li>{printedPageCount}</li>
-        <li>ru</li>
+        <li>{language}</li>
         <li>{listPrice} rub</li>
       </AB_DescriptionSC>
     </AB_ParasSC>

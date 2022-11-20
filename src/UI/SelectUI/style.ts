@@ -21,16 +21,9 @@ const TriangleSC = styled.div<ISelectSCProps>`
   border-bottom: ${({ isShow }) => isShow && "5px solid gray"};
 `;
 const SelectContentSC = styled.div<ISelectSCProps>`
+  max-height: ${({ isShow }) => (isShow ? "200px" : "0px")};
+  overflow: hidden;
   transition: all 0.3s;
-  height: 0px;
-  display: none;
-
-  ${(props) =>
-    props.isShow &&
-    `
-      display: block;
-      height: 100%;
-    `}
 `;
 export const useSelectStyle = () => ({
   SelectSC,
