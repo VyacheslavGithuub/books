@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMatchMedia } from "../../../hooks/useMatchMedia";
 import { IBook } from "../../../types/IBooksData";
+import SelectUI from "../../../UI/SelectUI/SelectUI";
 import SkeletonUI from "../../../UI/SkeletonUI/SkeletonUI";
+import AB_Header from "./AB_Header/AB_Header";
+import AB_MainInfo from "./AB_MainInfo/AB_MainInfo";
 import { useAboutBookStyle } from "./style";
 import { useAboutBook } from "./useAboutBook";
 
 const AboutBook = ({ book }: IBook) => {
+  const { isMobile }: any = useMatchMedia();
   const {
     AboutBookSC,
     AboutBookTopSC,
     AboutBookImgSC,
     ABDescriptionSC,
     AboutBookMainInfoSC,
-    AB_TitleSC,
-    AB_ParasSC,
-    AB_ParasTitleSC,
-    AB_Description,
     AB_OpenGoogleBook,
   } = useAboutBookStyle();
   const {
@@ -29,11 +30,11 @@ const AboutBook = ({ book }: IBook) => {
     photoSmall,
     listPrice,
   } = useAboutBook({ book });
-  console.log(description);
 
   return (
     <AboutBookSC>
       <AboutBookTopSC>
+        {isMobile && <AB_Header title={title} categories={categories} />}
         <AboutBookImgSC href={previewLink} target="_blank">
           {photoSmall ? (
             <img src={photoSmall} alt="IconError" />
@@ -41,38 +42,46 @@ const AboutBook = ({ book }: IBook) => {
             <SkeletonUI />
           )}
         </AboutBookImgSC>
-        <AboutBookMainInfoSC>
-          {categories}
-          <AB_TitleSC>{title}</AB_TitleSC>
-          <AB_ParasSC>
-            <AB_ParasTitleSC>
-              <li>Authors:</li>
-              <li>Издательство:</li>
-              <li>Опубликована:</li>
-              <li>Всего страниц:</li>
-              <li>Язык:</li>
-              <li>Цена:</li>
-            </AB_ParasTitleSC>
-            <AB_Description>
-              <li>{authors}</li>
-              <li>{publisher}</li>
-              <li>{publishedDate}</li>
-              <li>{printedPageCount}</li>
-              <li>ru</li>
-              <li>{listPrice} rub</li>
-            </AB_Description>
-          </AB_ParasSC>
 
-          <AB_OpenGoogleBook>
-            <a href={previewLink} target="_blank">
-              open google book
-            </a>
+        <AboutBookMainInfoSC>
+          {!isMobile && <AB_Header title={title} categories={categories} />}
+          {isMobile ? (
+            <SelectUI title="о книге">
+              <AB_MainInfo
+                authors={authors}
+                publisher={publisher}
+                listPrice={listPrice}
+                publishedDate={publishedDate}
+                printedPageCount={printedPageCount}
+              />
+            </SelectUI>
+          ) : (
+            <AB_MainInfo
+              authors={authors}
+              publisher={publisher}
+              listPrice={listPrice}
+              publishedDate={publishedDate}
+              printedPageCount={printedPageCount}
+            />
+          )}
+          <AB_OpenGoogleBook href={previewLink} target="_blank">
+            open google book
           </AB_OpenGoogleBook>
+          {isMobile && (
+            <SelectUI title="описание">
+              <ABDescriptionSC>
+                {description ? description : <SkeletonUI />}
+              </ABDescriptionSC>
+            </SelectUI>
+          )}
         </AboutBookMainInfoSC>
       </AboutBookTopSC>
-      <ABDescriptionSC>
-        {description ? description : <SkeletonUI />}
-      </ABDescriptionSC>
+
+      {!isMobile && (
+        <ABDescriptionSC>
+          {description ? description : <SkeletonUI />}
+        </ABDescriptionSC>
+      )}
     </AboutBookSC>
   );
 };

@@ -7,7 +7,6 @@ const AboutBookImgSC = styled.a`
   width: 300px;
   height: 423px;
   transition: 0.2s all;
-
   img {
     width: 300px;
     height: 423px;
@@ -15,12 +14,48 @@ const AboutBookImgSC = styled.a`
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
+
+  @media (max-width: 750px) {
+    width: 200px;
+    height: 323px;
+    img {
+      width: 200px;
+      height: 323px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 400px);
+    max-height: 423px;
+
+    img {
+      max-width: 300px;
+      width: calc(100vw - 100px);
+      height: 100%;
+    }
+  }
+  @media (max-width: 450px) {
+    max-height: 325px;
+    margin-bottom: 10px;
+    justify-content: left;
+
+    img {
+      max-width: 200px;
+      border: 1px solid;
+    }
+  }
 `;
 const AboutBookMainInfoSC = styled.div`
   position: relative;
   margin-left: 30px;
   li {
     line-height: 200%;
+  }
+  @media (max-width: 750px) {
+    margin-left: 15px;
   }
 `;
 
@@ -31,46 +66,58 @@ const AboutBookTopSC = styled.div`
     font-size: 20px;
     color: ${({ theme }) => theme.textAxilary};
   }
+  @media (max-width: 750px) {
+    padding: 10px;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 const ABDescriptionSC = styled.p`
   text-indent: 50px;
   line-height: 150%;
-  max-height: 346px;
+  max-height: calc(100vh - 510px);
   overflow-y: auto;
-  padding: 10px 20px;
+  padding: 10px 20px 0px 20px;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  @media (max-width: 750px) {
+    max-height: calc(100vh - 478px);
+    box-shadow: none;
+    padding: 10px 10px 0px 10px;
+    text-align: justify;
+    min-height: 246px;
+  }
+  @media (max-width: 450px) {
+    max-height: calc(30vh);
+
+    text-indent: 25px;
+    padding: 0px;
+    font-size: 14px;
+  }
 `;
-const AB_TitleSC = styled.h2`
-  font-size: 30px;
-  font-weight: 500;
-  margin: 10px 0px 30px 0px;
-`;
-const AB_ParasSC = styled.div`
-  display: flex;
-`;
-const AB_ParasTitleSC = styled.ol`
-  list-style-type: disc;
-  padding-left: 15px;
-`;
-const AB_Description = styled.ol`
-  list-style-type: none;
-`;
-const AB_OpenGoogleBook = styled.div`
+
+const AB_OpenGoogleBook = styled.a`
   position: absolute;
   bottom: 0px;
   left: 0px;
+
+  @media (max-width: 750px) {
+    a {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 export const useAboutBookStyle = () => ({
-  AB_TitleSC,
   AboutBookSC,
   AboutBookTopSC,
   AboutBookImgSC,
   ABDescriptionSC,
   AboutBookMainInfoSC,
-  AB_ParasSC,
-  AB_ParasTitleSC,
-  AB_Description,
   AB_OpenGoogleBook,
 });

@@ -9,7 +9,7 @@ const HeaderSC = styled.header`
   justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     height: 70px;
   }
 `;
@@ -45,7 +45,7 @@ const HeaderItemSC = styled.li`
     width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     font-size: 20px;
   }
 `;
