@@ -1,13 +1,15 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { IBooksData, IBooksItem } from "../../types/IBooksData";
 import { RootState } from "../store";
 import { getInformationBook, getSearchData } from "./booksAPI";
 
-interface CounterState {
+export interface CounterState {
   data: IBooksData[];
   dataBook: IBooksItem[];
   isLoading: boolean;
   errorBook: boolean;
+  countPage: number;
+  valueSearch: string;
 }
 
 const initialState: CounterState = {
@@ -15,6 +17,8 @@ const initialState: CounterState = {
   dataBook: [],
   isLoading: false,
   errorBook: false,
+  countPage: 0,
+  valueSearch: "",
 };
 
 export const booksSlice = createSlice({
@@ -23,6 +27,16 @@ export const booksSlice = createSlice({
   reducers: {
     clearSearchData(state) {
       state.data = [];
+      state.countPage = 0;
+    },
+    clearDataBook(state) {
+      state.dataBook = [];
+    },
+    addCountPage(state) {
+      state.countPage += 20;
+    },
+    addValueSearch(state, action: PayloadAction<string>) {
+      state.valueSearch = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -55,5 +69,6 @@ export const booksSlice = createSlice({
       });
   },
 });
-export const { clearSearchData } = booksSlice.actions;
+export const { clearSearchData, clearDataBook, addCountPage, addValueSearch } =
+  booksSlice.actions;
 export const selectSearch = (state: RootState) => state.books;

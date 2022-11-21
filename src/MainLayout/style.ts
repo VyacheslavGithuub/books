@@ -9,17 +9,6 @@ const MainLayoutSC = styled.div`
   color: ${({ theme }) => theme.textMain};
   letter-spacing: 1px;
 `;
-const IconBulbSC = styled.div`
-  position: absolute;
-  right: 5%;
-  top: 1%;
-  fill: ${({ theme }) => theme.invertBackground};
-  cursor: pointer;
-
-  &:hover {
-    background-size: 120%;
-  }
-`;
 
 const MainLayoutContainerSC = styled.div`
   width: 1200px;
@@ -31,7 +20,6 @@ const MainLayoutContainerSC = styled.div`
 `;
 
 export const useMainLayoutStyle = () => ({
-  IconBulbSC,
   MainLayoutSC,
   MainLayoutContainerSC,
 });

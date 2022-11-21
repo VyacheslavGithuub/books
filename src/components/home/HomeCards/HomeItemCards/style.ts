@@ -33,8 +33,9 @@ const ItemCardWrapSC = styled.div`
   }
 `;
 const ItemCardSC = styled.div`
+  min-height: 250px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 90%;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -53,7 +54,7 @@ const ItemCardSC = styled.div`
     padding: 10px;
 
     img {
-      height: 180px;
+      height: 200px;
     }
   }
 `;
@@ -61,7 +62,7 @@ const ItemCardSC = styled.div`
 const CardDPrice = styled.button`
   cursor: pointer;
   background-color: ${({ theme }) => theme.auxiliary};
-  color: black;
+  color: ${({ theme }) => theme.textMain};
   width: 100%;
   margin-top: 5px;
   font-size: 18px;

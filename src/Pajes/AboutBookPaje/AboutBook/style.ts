@@ -95,7 +95,7 @@ const ABDescriptionSC = styled.p`
   }
   @media (max-width: 450px) {
     text-indent: 25px;
-    padding: 0px;
+    padding: 0px 7px 10px 0px;
     font-size: 14px;
   }
 `;

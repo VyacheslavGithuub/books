@@ -45,27 +45,16 @@ const AboutBook = ({ book }: IBook) => {
         </AboutBookImgSC>
         <AboutBookMainInfoSC>
           {!isMobile && <AB_Header title={title} categories={categories} />}
-          {isMobile ? (
-            <SelectUI title="о книге">
-              <AB_MainInfo
-                authors={authors}
-                language={language}
-                publisher={publisher}
-                listPrice={listPrice}
-                publishedDate={publishedDate}
-                printedPageCount={printedPageCount}
-              />
-            </SelectUI>
-          ) : (
-            <AB_MainInfo
-              authors={authors}
-              language={language}
-              publisher={publisher}
-              listPrice={listPrice}
-              publishedDate={publishedDate}
-              printedPageCount={printedPageCount}
-            />
-          )}
+
+          <AB_MainInfo
+            authors={authors}
+            language={language}
+            publisher={publisher}
+            listPrice={listPrice}
+            publishedDate={publishedDate}
+            printedPageCount={printedPageCount}
+          />
+
           <AB_OpenGoogleBook href={previewLink} target="_blank">
             open google book
           </AB_OpenGoogleBook>

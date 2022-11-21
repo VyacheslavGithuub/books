@@ -6,7 +6,7 @@ interface ISelectSCProps {
 const SelectSC = styled.div``;
 const SelectTitleSC = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: right;
   margin-bottom: 7px;
   font-size: 20px;
   font-weight: 500;
@@ -15,13 +15,18 @@ const SelectTitleSC = styled.div`
   }
 `;
 const TriangleSC = styled.div<ISelectSCProps>`
-  margin-left: 5px;
-  border: 5px solid transparent;
-  border-top: ${({ isShow }) => !isShow && "5px solid gray"};
-  border-bottom: ${({ isShow }) => isShow && "5px solid gray"};
+  position: relative;
+  top: ${({ isShow }) => (isShow ? "-7px" : "7px")};
+  left: 0px;
+  margin-right: 5px;
+  border: 7px solid transparent;
+  border-top: ${({ isShow }) => !isShow && "7px solid gray"};
+  border-bottom: ${({ isShow }) => isShow && "7px solid gray"};
 `;
 const SelectContentSC = styled.div<ISelectSCProps>`
-  max-height: ${({ isShow }) => (isShow ? "200px" : "0px")};
+  max-height: ${({ isShow }) => (isShow ? "207px" : "0px")};
+  opacity: ${({ isShow }) => (isShow ? "1" : "0")};
+
   overflow: hidden;
   transition: all 0.3s;
 `;

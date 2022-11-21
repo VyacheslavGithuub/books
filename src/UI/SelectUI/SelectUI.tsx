@@ -13,11 +13,15 @@ const SelectUI = ({ title, children }: ISelectUIProps) => {
 
   const handleChangeIsShow = () => {
     setShow(!isShow);
+    setTimeout(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    }, 300);
   };
+
   return (
     <SelectSC>
       <SelectTitleSC onClick={handleChangeIsShow}>
-        {title} <TriangleSC isShow={isShow} />
+        <TriangleSC isShow={isShow} /> {title}
       </SelectTitleSC>
 
       <SelectContentSC isShow={isShow}>{children}</SelectContentSC>

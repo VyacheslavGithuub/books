@@ -22,7 +22,11 @@ const HomeCardsTitleSC = styled.h2`
     font-size: 18px;
   }
 `;
+const LoaderSC = styled.div`
+  text-align: center;
+`;
 export const styleHomeCards = () => ({
+  LoaderSC,
   HomeCardsSC,
   HomeCardsTitleSC,
 });

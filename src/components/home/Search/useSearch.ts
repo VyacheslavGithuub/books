@@ -1,7 +1,10 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { getSearchData } from "../../../redux/slice/booksAPI";
-import { clearSearchData } from "../../../redux/slice/booksSlice";
+import {
+  addValueSearch,
+  clearSearchData,
+} from "../../../redux/slice/booksSlice";
 
 export const useSearch = () => {
   const { data } = useAppSelector((state) => state.books);
@@ -9,11 +12,14 @@ export const useSearch = () => {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    let searchValue = e.target[0].value;
+    let searchValue: string = e.target[0].value;
     if (data) {
       dispatch(clearSearchData());
     }
-    dispatch(getSearchData(searchValue));
+
+    dispatch(addValueSearch(searchValue));
+    dispatch(getSearchData());
+
     e.target[0].value = "";
   };
   return {
