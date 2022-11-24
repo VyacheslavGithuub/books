@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useMatchMedia } from "../../../hooks/useMatchMedia";
+import IconArrowLeft from "../../../Icon/IconArrowLeft";
 import { IBook } from "../../../types/IBooksData";
 import SelectUI from "../../../UI/SelectUI/SelectUI";
 import SkeletonUI from "../../../UI/SkeletonUI/SkeletonUI";
@@ -17,6 +18,8 @@ const AboutBook = ({ book }: IBook) => {
     ABDescriptionSC,
     AboutBookMainInfoSC,
     AB_OpenGoogleBook,
+    AB_PhotoSection_SC,
+    IconArrowLeftSC,
   } = useAboutBookStyle();
   const {
     title,
@@ -36,13 +39,20 @@ const AboutBook = ({ book }: IBook) => {
     <AboutBookSC>
       <AboutBookTopSC>
         {isMobile && <AB_Header title={title} categories={categories} />}
-        <AboutBookImgSC href={previewLink} target="_blank">
-          {photoSmall ? (
-            <img src={photoSmall} alt="IconError" />
-          ) : (
-            <SkeletonUI />
-          )}
-        </AboutBookImgSC>
+
+        <AB_PhotoSection_SC>
+          <AboutBookImgSC href={previewLink} target="_blank">
+            {photoSmall ? (
+              <img src={photoSmall} alt="IconError" />
+            ) : (
+              <SkeletonUI />
+            )}
+          </AboutBookImgSC>
+          <IconArrowLeftSC onClick={() => window.history.back()}>
+            <IconArrowLeft />
+          </IconArrowLeftSC>
+        </AB_PhotoSection_SC>
+
         <AboutBookMainInfoSC>
           {!isMobile && <AB_Header title={title} categories={categories} />}
 

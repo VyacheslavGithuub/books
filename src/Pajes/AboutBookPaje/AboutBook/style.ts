@@ -106,12 +106,26 @@ const AB_OpenGoogleBook = styled.a`
   left: 0px;
 
   @media (max-width: 750px) {
-    a {
-      font-size: 14px;
-    }
+    font-size: 16px !important;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 600px) {
     display: none;
+  }
+`;
+const AB_PhotoSection_SC = styled.div`
+  @media (max-width: 450px) {
+    position: relative;
+    display: flex;
+  }
+`;
+const IconArrowLeftSC = styled.div`
+  display: none;
+  @media (max-width: 450px) {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 40px);
+    fill: ${({ theme }) => theme.textAxilary};
   }
 `;
 export const useAboutBookStyle = () => ({
@@ -121,4 +135,6 @@ export const useAboutBookStyle = () => ({
   ABDescriptionSC,
   AboutBookMainInfoSC,
   AB_OpenGoogleBook,
+  AB_PhotoSection_SC,
+  IconArrowLeftSC,
 });

@@ -33,7 +33,7 @@ export const booksSlice = createSlice({
       state.dataBook = [];
     },
     addCountPage(state) {
-      state.countPage += 20;
+      state.countPage += 40;
     },
     addValueSearch(state, action: PayloadAction<string>) {
       state.valueSearch = action.payload;

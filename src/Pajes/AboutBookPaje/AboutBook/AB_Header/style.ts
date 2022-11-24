@@ -9,6 +9,7 @@ const AB_TitleSC = styled.h2`
   }
   @media (max-width: 750px) {
     font-size: 24px;
+    margin: 10px 0px 20px 0px;
   }
   @media (max-width: 650px) {
     font-size: 22px;

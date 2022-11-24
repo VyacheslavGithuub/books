@@ -14,7 +14,7 @@ export const getSearchData = createAsyncThunk<
   const { valueSearch, countPage } = getState().books;
   try {
     const response = await axios.get<IBooksData>(
-      `${baseURL}/volumes?q=${valueSearch}&key=${apiKey}&startIndex=${countPage}&maxResults=19`
+      `${baseURL}/volumes?q=${valueSearch}&filter=paid-ebooks&key=${apiKey}&startIndex=${countPage}&maxResults=40`
     );
     return response.data;
   } catch (error) {

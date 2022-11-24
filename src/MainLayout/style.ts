@@ -9,7 +9,11 @@ const MainLayoutSC = styled.div`
   color: ${({ theme }) => theme.textMain};
   letter-spacing: 1px;
 `;
-
+const ScrollLeftBlogSC = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
 const MainLayoutContainerSC = styled.div`
   width: 1200px;
   margin: 0 auto;
@@ -21,5 +25,6 @@ const MainLayoutContainerSC = styled.div`
 
 export const useMainLayoutStyle = () => ({
   MainLayoutSC,
+  ScrollLeftBlogSC,
   MainLayoutContainerSC,
 });

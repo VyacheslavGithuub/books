@@ -11,7 +11,17 @@ const ContentSC = styled.main`
     min-height: calc(100vh - 135px);
   }
 `;
+const ContentScrollTopSC = styled.div`
+  display: none;
+  @media (max-width: 1200px) {
+    display: block;
+    position: sticky;
+    bottom: 30px;
+    left: 13px;
+  }
+`;
 
 export const useContentStyled = () => ({
   ContentSC,
+  ContentScrollTopSC,
 });
