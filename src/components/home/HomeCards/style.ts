@@ -8,17 +8,16 @@ const HomeCardsSC = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 25px 0px;
+  @media (max-width: 600px) {
+    padding: 0px;
+  }
 `;
 const HomeCardsTitleSC = styled.h2`
   text-align: center;
-  /* margin-top: 50px; */
 
   @media (max-width: 600px) {
     margin-top: 0px;
     font-size: 20px;
-    /* position: absolute;
-    top: 50%;
-    left: calc(50% - 250px); */
   }
 `;
 const LoaderSC = styled.div`

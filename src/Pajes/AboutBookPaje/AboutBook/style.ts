@@ -5,7 +5,7 @@ const AboutBookSC = styled.div`
 `;
 const AboutBookImgSC = styled.a`
   width: 300px;
-  height: 423px;
+  max-height: 423px;
   transition: 0.2s all;
   img {
     width: 300px;
@@ -39,6 +39,7 @@ const AboutBookImgSC = styled.a`
     }
   }
   @media (max-width: 450px) {
+    height: calc(100vh - 420px);
     max-height: 325px;
     justify-content: left;
 
@@ -79,6 +80,7 @@ const AboutBookTopSC = styled.div`
 const ABDescriptionSC = styled.p`
   text-indent: 50px;
   line-height: 150%;
+  min-height: 100px;
   max-height: calc(100vh - 510px);
   overflow-y: auto;
   padding: 10px 20px 0px 20px;
