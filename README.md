@@ -1,7 +1,3 @@
-# State
-
-### In developing
-
 # Pajes
 
 https://vyacheslavgithuub.github.io/books/
