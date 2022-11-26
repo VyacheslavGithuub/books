@@ -22,14 +22,24 @@ const HomeCardsTitleSC = styled.h2`
   }
 `;
 const LoaderSC = styled.div`
-  @media (max-width: 600px) {
-    position: absolute;
-    top: calc(50% - 20px);
-    left: calc(50% - 40px);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 10px;
+`;
+const HomeCardsScrollSC = styled.div`
+  display: none;
+  @media (max-width: 1200px) {
+    display: block;
+    position: sticky;
+    bottom: 30px;
+    left: 13px;
   }
 `;
+
 export const styleHomeCards = () => ({
   LoaderSC,
   HomeCardsSC,
   HomeCardsTitleSC,
+  HomeCardsScrollSC,
 });

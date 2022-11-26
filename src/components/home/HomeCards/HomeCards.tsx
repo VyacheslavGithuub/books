@@ -1,36 +1,14 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { getSearchData } from "../../../redux/slice/booksAPI";
-import { addCountPage } from "../../../redux/slice/booksSlice";
-import Loader from "../../../UI/Loader/Loader";
+import React from "react";
 import LoaderEllipsis from "../../../UI/Loader/LoaderEllipsis/LoaderEllipsis";
+import ScrollTopUI from "../../../UI/ScrollTopUI/ScrollTopUI";
 import HomeItemCards from "./HomeItemCards/HomeItemCards";
 import { styleHomeCards } from "./style";
+import { useHomeItemCards } from "./useHomeItemCard";
 
 const HomeCards = () => {
-  const { HomeCardsSC, HomeCardsTitleSC, LoaderSC } = styleHomeCards();
-  const { data, isLoading, errorBook, valueSearch } = useAppSelector(
-    (state) => state.books
-  );
-
-  const dispatch = useAppDispatch();
-  const scrollHandler = (e: any) => {
-    if (
-      e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) ===
-        0 &&
-      valueSearch.length > 0
-    ) {
-      dispatch(addCountPage());
-      dispatch(getSearchData());
-    }
-  };
-  useEffect(() => {
-    document.addEventListener("scroll", scrollHandler);
-    return function () {
-      document.removeEventListener("scroll", scrollHandler);
-    };
-  }, []);
+  const { HomeCardsSC, HomeCardsTitleSC, LoaderSC, HomeCardsScrollSC } =
+    styleHomeCards();
+  const { data, errorBook, isLoading } = useHomeItemCards();
 
   return (
     <>
@@ -62,6 +40,9 @@ const HomeCards = () => {
         </>
       </HomeCardsSC>
       <LoaderSC>{isLoading && <LoaderEllipsis />}</LoaderSC>
+      <HomeCardsScrollSC>
+        <ScrollTopUI />
+      </HomeCardsScrollSC>
     </>
   );
 };

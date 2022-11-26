@@ -5,11 +5,8 @@
   "homepage": "https://vyacheslavgithuub.github.io/books/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
-    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^27.5.2",
-    "@types/json-server": "^0.14.4",
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
@@ -22,15 +19,12 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
-    "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"

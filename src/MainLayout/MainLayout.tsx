@@ -13,7 +13,7 @@ function MainLayout() {
   const { isTheme, hendleChangeTheme } = useApp();
 
   return (
-    <ThemeProvider theme={isTheme ? dark_theme : light_theme}>
+    <ThemeProvider theme={isTheme === "light" ? light_theme : dark_theme}>
       <MainLayoutSC id="MainLayout">
         <ScrollLeftBlogSC>
           <ScrollTopUI />
